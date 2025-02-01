@@ -1,0 +1,140 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo y disposición de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(../Imagenes/buades.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Contenedor principal */
+.container {
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    width: 26%;
+    max-width: 600px;
+    min-width: 320px;
+    padding: 10px 15px; /* Reduce padding para mayor compacidad */
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Estilo del título */
+h1 {
+    font-size: 1.6rem; /* Un poco más pequeño para que se vea más compacto */
+    color: #222;
+    margin-bottom: 5px; /* Reduce el margen para más compacidad */
+}
+
+h1:hover {
+    font-size: 1.6rem;
+    color: green;
+    margin-bottom: 5px; /* Mantén la consistencia con el cambio de tamaño */
+}
+
+h5 {
+    font-size: 0.8rem; /* Reduce un poco el tamaño */
+    color: green;
+    margin-bottom: 10px; /* Reduce el margen */
+}
+
+
+/* Contenedor del visor KeyShotXR */
+.keyshot-container {
+    width: 90%;
+    height: 300px; /* Reduce un poco la altura para mayor compacidad */
+    margin: 5px auto;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotar 60s linear infinite; /* 60s para una rotación lenta */
+}
+
+/* Ajuste del iframe */
+.keyshot-container iframe {
+    width: 100%;
+    height: 100%; /* Asegura que ocupe toda la altura del contenedor */
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    mix-blend-mode: multiply;
+    box-shadow: none;
+}
+
+/* Estilo del texto */
+p {
+    font-size: 0.85rem;
+    color: #333;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 0; /* Elimina espacio innecesario entre el iframe y el texto */
+    padding: 4px 8px;
+}
+
+/* Estilo para el texto destacado */
+.textobd {
+    color: green;
+    font-weight: bold;
+}
+
+/* Estilo del descuento */
+.descuento {
+    font-size: 1.4rem; /* Un tamaño más adecuado para ser visible pero compacto */
+    font-weight: bold;
+    color: #fff;
+    animation: vibrar 1.5s infinite, cambiarColor 2s infinite alternate;
+    padding: 8px 0;
+    margin-top: 10px; /* Añade un pequeño margen superior */
+}
+
+/* Animación de vibración */
+@keyframes vibrar {
+    0%, 100% { transform: scale(1); }
+    25%, 75% { transform: scale(1.06); }
+    50% { transform: scale(0.95); }
+}
+
+/* Animación de cambio de color */
+@keyframes cambiarColor {
+    0% { color: #ff4444; }
+    50% { color: #ff9900; }
+    100% { color: #00cc44; }
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container {
+        width: 85%; /* Más ancho para pantallas pequeñas */
+        padding: 10px;
+    }
+
+    .keyshot-container iframe {
+        height: 200px; /* Ajusta la altura para móviles */
+    }
+
+    .descuento {
+        font-size: 1.2rem; /* Reduce el tamaño del descuento */
+    }
+
+    h1 {
+        font-size: 1.4rem; /* Ajuste para dispositivos más pequeños */
+    }
+
+    p {
+        font-size: 0.8rem; /* Reducir el tamaño del texto en pantallas pequeñas */
+    }
+}
